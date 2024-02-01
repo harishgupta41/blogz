@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="login">
+    <form action="{{url_for('user_register')}}" method="post">
+        <label for="fname">First Name</label>
+        <input type="text" name="fname" id="fname">
+        <label for="lname">Last Name</label>
+        <input type="text" name="lname" id="lname">
+        <label for="gmail">Gmail</label>
+        <input type="email" name="gmail" id="gmail">
+        <label for="uname">Select username</label>
+        <input type="text" name="uname" id="uname">
+        <label for="passwd">Password</label>
+        <input type="password" name="passwd" id="passwd">
+        <label for="repasswd">Confirm Password</label>
+        <input type="password" name="repasswd" id="repasswd">
+        <button>Register</button>
+        <a href="">alread have an account?</a>
+    </form>
+</div>
+
+{% endblock %}
