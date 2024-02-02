@@ -1,2 +1,24 @@
 {% extends "layout.html" %}
 {% block content %}
+<div class="profile">
+    <div class="usrname">
+        <i class="fa-regular fa-user"></i>
+        <h1>{{data[0]}}</h1>
+    </div>
+    <div class="outer">
+        <div class="inner right-border">
+            <p><h2>{{data[1]}}</h2></p>
+            <p><h2>{{data[2]}}</h2></p>
+            <p><h2>{{data[3]}}</h2></p>
+            <p><h2>User Since<br>{{data[4]}}</h2></p>
+        </div>
+        <div class="inner">
+            <p><h3><a href="">Edit-Profile</a></h3></p>
+            <p><h3><a href="">Change-Password</a></h3></p>
+            <p><h3><a href="">My-Blogs</a></h3></p>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -75,6 +75,18 @@ def posting():
         cursor.execute('insert into posts(post_id, author, title, post_body) values("{0}", "{1}", "{2}","{3}")'.format(postid,author,title,post))
         mydb.commit()
         return redirect('/')
+    
+@app.route('/myprofile')
+def myprofile():
+    cursor.execute('select * from users where user_name="{0}"'.format("harry123"))
+    data=cursor.fetchall()
+    return render_template('profile.html',title="my-profile",data=data[0])
+
+@app.route('/myblogs')
+def myblogs():
+    cursor.execute('select * from posts where author="{0}"'.format("dummy"))
+    data=cursor.fetchall()
+    return render_template('home.html',title="my-blogs",data=data)
 
 if __name__=="__main__":
     app.run(debug=True)
