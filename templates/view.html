@@ -1,0 +1,17 @@
+{% extends "layout.html" %} {% block content %}
+<div class="view">
+  <div class="head">
+    <h1>{{data[3]}}</h1>
+  </div>
+  <div class="post-body">
+    <p>
+      {{data[4]}}
+    </p>
+  </div>
+  <div class="foot">
+    <h5>Posted by: {{data[2]}}</h5>
+    <h5>{{data[1]}}</h5>
+  </div>
+</div>
+
+{% endblock %}

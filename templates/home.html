@@ -1,24 +1,26 @@
 {% extends "layout.html"%} {%block content%}
 <div class="blogs">
-  {% if data %}
-  {% for blog in data %}
-    <div class="blog">
-      <div class="head">
-        <h2>{{blog[3]}}</h2>  <!-- for title -->
-        <div class="info"> 
-          <h5>{{blog[2]}}</h5> <!-- for author -->
-          <h5>{{blog[1]}}</h5> <!-- for posted date time-->
-        </div>
-      </div>
-      <div class="text">
-        {{blog[4]}} <!-- for posted blog-->
-      </div>
-      <div class="view-btn">
-        <a href="#">view</a>
+  {% if data %} {% for blog in data %}
+  <div class="blog">
+    <div class="head">
+      <h2>{{blog[3]}}</h2>
+      <!-- for title -->
+      <div class="info">
+        <h5>{{blog[2]}}</h5>
+        <!-- for author -->
+        <h5>{{blog[1]}}</h5>
+        <!-- for posted date time-->
       </div>
     </div>
-  {% endfor %}
-  {% else %}
+    <div class="text">
+      {{blog[4]}}
+      <!-- for posted blog-->
+    </div>
+    <div class="view-btn">
+      <a href="/view?id={{blog[0]}}">view</a>
+    </div>
+  </div>
+  {% endfor %} {% else %}
   <div>
     <h1>No data posted</h1>
   </div>

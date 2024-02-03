@@ -20,9 +20,13 @@ def home():
     data=cursor.fetchall()
     return render_template('home.html',title="home",data=data)
 
-@app.route('/view/:id')
+@app.route('/view')
 def view():
-    return 
+    postid = request.args.get('id')
+    cursor.execute('select * from posts where post_id="{0}"'.format(postid))
+    data=cursor.fetchall()
+    # print(data)
+    return render_template('view.html',title=data[0][3],data=data[0])
     
 @app.route('/login')
 def login():
@@ -70,7 +74,7 @@ def posting():
     if request.method == "POST":
         title=request.form['title']
         post=request.form['blogpost']
-        author="dummy"
+        author="harry123"
         postid=uuid.uuid4().hex
         cursor.execute('insert into posts(post_id, author, title, post_body) values("{0}", "{1}", "{2}","{3}")'.format(postid,author,title,post))
         mydb.commit()
@@ -84,7 +88,7 @@ def myprofile():
 
 @app.route('/myblogs')
 def myblogs():
-    cursor.execute('select * from posts where author="{0}"'.format("dummy"))
+    cursor.execute('select * from posts where author="{0}"'.format("harry123"))
     data=cursor.fetchall()
     return render_template('home.html',title="my-blogs",data=data)
 
