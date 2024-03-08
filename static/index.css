@@ -76,8 +76,9 @@ footer a {
   text-decoration: none;
   color: white;
 }
+/* -------------------------------------------------------------home-page css ------------------------------------------------------- */
 .search-bar{
-  padding: 1em;
+  padding: 1.5em;
   width: 60%;
   display: flex;
   align-items: center;
@@ -105,6 +106,76 @@ footer a {
 }
 .search-bar a{
   text-decoration: none;
+}
+.blogs-disp{
+  max-width: 100vw;
+  min-height: 80vh;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.blogs-disp .blog{
+  min-width: 10em;
+  max-width: 20%;
+  height: 14.4em;
+  border-radius: 8px;
+  margin: 1%;
+  padding: 1em;
+  overflow: hidden;
+  position: relative;
+  background-color: rgb(247, 212, 166);
+} 
+.blogs-disp .blog .heading{
+  width: 100%;
+  margin-bottom: .5em;
+  text-align: center;
+  text-transform: capitalize;
+}
+.blogs-disp .blog .info{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: .3em;
+  font-size: large;
+  flex-wrap: wrap;
+  border-bottom: 1px solid black;
+}
+.blogs-disp .blog .body p{
+  font-size: .9em;
+  font-family: 'Times New Roman';
+  color: black;
+}
+.blogs-disp .blog .view-btn{
+  width: 100%;
+  margin: -1em -1em;
+  height: 2em;
+  position: absolute;
+  bottom: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  /* border:  1px solid rgb(0, 0, 0); */
+  background-color: black;
+}
+.blogs-disp .view-btn a{
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  font-size: larger;
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  /* border-radius: 4px; */
+  padding: .3em .6em;
+}
+.blog .view-btn a:hover {
+  transition: 200ms;
+  color: rgb(0, 191, 255);
+  box-shadow: 1px 1px 5px 5px rgb(0, 0, 0);
 }
 
 
@@ -222,67 +293,7 @@ footer a {
   margin-top: 1em;
 }
 
-.blogs {
-  width: 100%;
-  min-height: 80vh;
-  padding: 1.5%;
-  /* border: 1px solid rgb(0, 255, 170); */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-}
 
-.blog {
-  max-width: 400px;
-  max-height: 250px;
-  min-height: 200px;
-  border: 1px solid lightgray;
-  border-radius: 8px;
-  padding: 0.5em;
-  color: lightgray;
-  margin: 0.5em;
-  overflow: hidden;
-  position: relative;
-}
-
-.blog .head {
-  width: 100%;
-  text-align: center;
-  text-transform: capitalize;
-  border-bottom: 1px solid lightgray;
-  margin-bottom: 1em;
-}
-.blog .info {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.blog .view-btn {
-  width: 96%;
-  height: 50px;
-  background-color: var(--dark);
-  position: absolute;
-  bottom: 0;
-  font-size: 1.2em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.blog .view-btn a {
-  text-decoration: none;
-  border: 1px solid lightgray;
-  padding: 0.3em 0.6em;
-  border-radius: 4px;
-  color: lightgray;
-}
-.blog .view-btn a:hover {
-  transition: 200ms;
-  color: skyblue;
-  border: 1px solid skyblue;
-  box-shadow: 1px 1px 5px 1px skyblue;
-}
 .head label {
   font-size: xx-large;
   font-family: Arial, Helvetica, sans-serif;

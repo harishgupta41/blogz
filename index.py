@@ -22,6 +22,8 @@ def home():
         print("cookie not set")
     cursor.execute('select * from posts limit 10');
     data=cursor.fetchall()
+    # print(data)
+    # print(type(data[1]))
     return render_template('home.html',title="home",data=data)
 
 @app.route('/view')

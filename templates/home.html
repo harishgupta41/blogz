@@ -3,25 +3,25 @@
   <input type="search" placeholder="search blogs....">
   <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
 </div>
-<div class="blogs">
+<div class="blogs-disp">
   {% if data %} {% for blog in data %}
   <div class="blog">
-    <div class="head">
-      <h2>{{blog[3]}}</h2>
+    <div class="heading">
+      <h3>{{blog[3]}}</h3>
       <!-- for title -->
     </div>
-      <div class="info">
-        <h5>{{blog[2]}}</h5>
-        <!-- for author -->
-        <h5>{{blog[1]}}</h5>
-        <!-- for posted date time-->
-      </div>
-    <div class="text">
-      {{blog[4]}}
+    <div class="info">
+      <h5>{{blog[2]}}</h5>
+      <!-- for author -->
+      <h5>{{blog[1].date()}}</h5>
+      <!-- for posted date time-->
+    </div>
+    <div class="body">
+      <p>{{blog[4]}}</p>
       <!-- for posted blog-->
     </div>
     <div class="view-btn">
-      <a href="/view?id={{blog[0]}}">view</a>
+      <a href="/view?id={{blog[0]}}">View Blog</a>
     </div>
   </div>
   {% endfor %} {% else %}
