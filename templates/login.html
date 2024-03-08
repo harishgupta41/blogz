@@ -1,9 +1,9 @@
 {% extends "layout.html" %} {% block content %}
-<div class="login">
+<div class="user-form">
   <form action="{{url_for('user_login')}}" method="POST">
-    <label for="username">username</label>
+    <label for="username">Username</label>
     <input type="text" name="user" id="username" required />
-    <label for="passwd">password</label>
+    <label for="passwd">Password</label>
     <input type="password" name="pswd" id="passwd" required />
     <button>Submit</button>
     <p>
