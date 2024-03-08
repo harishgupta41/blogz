@@ -7,12 +7,10 @@
   margin: 0%;
   box-sizing: border-box;
 }
-
 body {
   background-color: var(--dark);
   width: 100%;
 }
-
 header {
   width: 100%;
   min-height: 10vh;
@@ -21,7 +19,6 @@ header {
   align-items: center;
   justify-content: space-between;
 }
-
 header .logo {
   margin: 0 1em;
 }
@@ -36,7 +33,6 @@ header nav {
   align-items: center;
   justify-content: space-evenly;
 }
-
 header nav a {
   text-decoration: none;
   color: white;
@@ -56,15 +52,11 @@ header nav a:hover {
   cursor: pointer;
   display: none;
 }
-
 main {
   width: 100%;
   min-height: 100vh;
-  /* display: flex;
+  display: flex;
   flex-direction: column;
-  align-items: center; */
-  /* justify-content: center; */
-  /* margin: auto; */
 }
 footer {
   width: 100%;
@@ -80,53 +72,43 @@ footer .body {
   display: flex;
   justify-content: space-evenly;
 }
-
 footer a {
   text-decoration: none;
   color: white;
 }
-
-.search {
-  height: 100%;
-  width: 50%;
-  /* border: 1px solid black; */
+.search-bar{
+  padding: 1em;
+  width: 60%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  /* margin-right: 1 1em; */
+  margin-left: 20%;
 }
-
-.search input {
+.search-bar input{
   width: 100%;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  text-align: center;
-  font-size: 1em;
-  height: 2em;
-  /* border-radius: 8px; */
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
+  height: 2.5em;
   border: none;
   outline: none;
   overflow: hidden;
-  /* margin-right: 20%; */
-  /* padding-left: 1em; */
+  border-radius: 8px;
+  padding-left: 1em;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: medium;
+  text-align: center;
 }
-
-.search input::-webkit-search-cancel-button {
-  margin-right: 1em;
+.search-bar input::-webkit-search-cancel-button {
+  margin-right: 6%;
 }
-
-.search a {
-  height: 100%;
-  width: 5%;
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
-  height: 1.8em;
-  font-size: large;
-  color: rgb(0, 0, 0);
-  background-color: white;
+.search-bar i{
+  color: black;
+  text-indent: -2em;
+  display: block;
+}
+.search-bar a{
   text-decoration: none;
 }
+
+
+
 
 .login {
   /* margin-top: 6%; */
