@@ -1,14 +1,16 @@
-{% extends "layout.html" %}
-{% block content %}
+{% extends "layout.html" %} {% block content %}
 <div class="login">
-    <form action="{{url_for('user_login')}}" method="POST">
-        <label for="username">username</label>
-        <input type="text" name="user" id="username" required>
-        <label for="passwd">password</label>
-        <input type="password" name="pswd" id="passwd" required>
-        <button>Submit</button>
-        <p>dont have an account? Click<a href="{{url_for('registration')}}"> here</a> to get one.</p>
-    </form>
+  <form action="{{url_for('user_login')}}" method="POST">
+    <label for="username">username</label>
+    <input type="text" name="user" id="username" required />
+    <label for="passwd">password</label>
+    <input type="password" name="pswd" id="passwd" required />
+    <button>Submit</button>
+    <p>
+      dont have an account? Click<a href="{{url_for('registration')}}"> here</a>
+      to get one.
+    </p>
+  </form>
 </div>
 
 {% endblock%}

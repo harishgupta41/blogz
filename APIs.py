@@ -7,6 +7,7 @@ mydb = mysql.connector.connect(
     username="harry",
     password="dl3san3581"
 )
+
 cursor = mydb.cursor()
 
 def loginAPI(username, password):

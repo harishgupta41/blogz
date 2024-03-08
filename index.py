@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, make_response, Response
 import mysql.connector
 # import argon2
 import uuid
@@ -16,6 +16,10 @@ app=Flask(__name__)
 @app.route('/')
 @app.route('/home')
 def home():
+    if request.cookies.get('user'):
+        print(request.cookies.get('user'))
+    else:
+        print("cookie not set")
     cursor.execute('select * from posts limit 10');
     data=cursor.fetchall()
     return render_template('home.html',title="home",data=data)
@@ -40,7 +44,9 @@ def user_login():
         cursor.execute("SELECT * FROM users WHERE user_name='{0}' AND password=md5('{1}')".format(username, passwd))
         data = cursor.fetchall()
         if(data):
-            return redirect('/')
+            resp=make_response(redirect('/'))
+            resp.set_cookie('user',username)
+            return resp
         else:
             return redirect('/login')
         
@@ -67,6 +73,8 @@ def user_register():
 
 @app.route('/new-blog')
 def new_blog():
+    if "user" not in request.cookies:
+        return render_template('access.html',title="access-denied")
     return render_template('new.html',title="new-blog")
 
 @app.route('/posting',methods=["POST"])
@@ -82,15 +90,25 @@ def posting():
     
 @app.route('/myprofile')
 def myprofile():
-    cursor.execute('select * from users where user_name="{0}"'.format("harry123"))
+    if "user" not in request.cookies:
+        return render_template('access.html',title="access-denied")
+    cursor.execute('select * from users where user_name="{0}"'.format(request.cookies.get('user')))
     data=cursor.fetchall()
     return render_template('profile.html',title="my-profile",data=data[0])
 
 @app.route('/myblogs')
 def myblogs():
-    cursor.execute('select * from posts where author="{0}"'.format("harry123"))
+    if "user" not in request.cookies:
+        return render_template('access.html',title="access-denied")
+    cursor.execute('select * from posts where author="{0}"'.format(request.cookies.get('user')))
     data=cursor.fetchall()
     return render_template('home.html',title="my-blogs",data=data)
+
+@app.route('/logout')
+def logout():
+    response = make_response(render_template('logout.html',title='logging-out'))
+    response.set_cookie('user', '', max_age=0)
+    return response
 
 if __name__=="__main__":
     app.run(debug=True)
