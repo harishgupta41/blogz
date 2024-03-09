@@ -360,6 +360,18 @@ footer a {
 
 
 /* ----------------------------------- view blogs --------------------------------- */
+.view-blog{
+  width: 80%;
+  min-height: 60vh;
+  padding: 1% 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(247, 212, 166);
+  border-radius: 12px;
+}
+
+
 
 .view {
   margin-top: 2%;

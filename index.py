@@ -16,14 +16,12 @@ app=Flask(__name__)
 @app.route('/')
 @app.route('/home')
 def home():
-    if request.cookies.get('user'):
-        print(request.cookies.get('user'))
-    else:
-        print("cookie not set")
+    # if request.cookies.get('user'):
+    #     print(request.cookies.get('user'))
+    # else:
+    #     print("cookie not set")
     cursor.execute('select * from posts limit 10');
     data=cursor.fetchall()
-    # print(data)
-    # print(type(data[1]))
     return render_template('home.html',title="home",data=data)
 
 @app.route('/view')
@@ -71,7 +69,6 @@ def user_register():
             cursor.execute("insert into users(user_name, fname, lname, gmail, password) values('{0}', '{1}', '{2}', '{3}', md5('{4}'))".format(uname, fname, lname, gmail, password))
             mydb.commit()
             return redirect('/login')
-        # print(fname,lname,gmail,password,repassword)
 
 @app.route('/new-blog')
 def new_blog():
