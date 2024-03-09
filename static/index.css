@@ -233,60 +233,60 @@ footer a {
 }
 
 /* --------------------------------------- new-post ------------------------------------------ */
-
-
-.outer {
+.new-post{
+  width: 80%;
+  height: 80vh;
+}
+.new-post form{
   width: 100%;
-  height: min-content;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
-.inner form {
+.new-post form input{
   width: 100%;
-  height: fit-content;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.inner form input {
-  width: 100%;
-  height: 1.5em;
-  margin-top: 1em;
-  padding: 1%;
+  height: 10%;
+  padding: 1% 2%;
+  font-size: larger;
+  font-family: 'Times New Roman', Times, serif;
   text-align: center;
-  font-size: x-large;
-  font-family: Arial, Helvetica, sans-serif;
-  /* border: none; */
-  border-radius: 0.5em;
+  overflow: hidden;
+  border: none;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
   outline: none;
 }
-
-.inner form textarea {
+.new-post form textarea{
   width: 100%;
-  padding: 1.5%;
-  margin-top: 1em;
-  font-size: 1em;
-  font-family: "Times New Roman", Times, serif;
-  border-radius: 0.5em;
+  height: 100%;
+  padding: 1% 2%;
+  font-size: medium;
+  font-family: 'Times New Roman', Times, serif;
+  border: none;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
   outline: none;
 }
-
-.inner form button {
-  height: 2.5em;
-  width: 30%;
-  border-radius: 1em;
+.new-post form button{
+  width: 20%;
+  height: 10%;
+  margin: 2%;
+  border-radius: 8px;
   border: none;
   cursor: pointer;
-  font-size: 1em;
-  background-color: rgb(1, 68, 170);
-  color: rgb(252, 197, 17);
-  margin-top: 1em;
+  font-size: larger;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: rgb(99, 156, 241);
+  color: rgb(87, 32, 0);
+}
+.new-post form button:hover{
+  background-color: black;
+  color: white;
+  box-shadow: 1px 1px 7px 1px black;
 }
 
-
+/* 
 .head label {
   font-size: xx-large;
   font-family: Arial, Helvetica, sans-serif;
@@ -304,8 +304,10 @@ footer a {
   flex-direction: column;
   align-items: flex-end;
   justify-content: baseline;
-}
+} */
 
+
+/* ----------------------------------- user profile ------------------------------------------- */
 .profile {
   width: 100%;
   min-height: 80vh;
@@ -370,6 +372,9 @@ footer a {
   color: aqua;
 }
 
+
+/* ----------------------------------- view blogs --------------------------------- */
+
 .view {
   margin-top: 2%;
   width: 80%;
@@ -407,6 +412,8 @@ footer a {
   font-size: larger;
   font-family: "Courier New", Courier, monospace;
 }
+
+
 
 /* media query */
 @media screen and (width < 600px) {

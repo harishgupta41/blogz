@@ -84,7 +84,7 @@ def posting():
     if request.method == "POST":
         title=request.form['title']
         post=request.form['blogpost']
-        author="harry123"
+        author=request.cookies.get('user')
         postid=uuid.uuid4().hex
         cursor.execute('insert into posts(post_id, author, title, post_body) values("{0}", "{1}", "{2}","{3}")'.format(postid,author,title,post))
         mydb.commit()
