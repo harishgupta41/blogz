@@ -108,8 +108,8 @@ def myblogs():
 
 @app.route('/logout')
 def logout():
-    response = make_response(render_template('logout.html',title='logging-out'))
-    response.set_cookie('user', '', max_age=0)
+    response = make_response(render_template('logout.html',title='logged-out'))
+    response.set_cookie('user','', max_age=0)
     return response
 
 if __name__=="__main__":
