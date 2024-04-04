@@ -1,8 +1,8 @@
-function handleSearchClick(){
-    const search = document.getElementById("search")
-    console.log(search);
-}
+// function handleSearchClick(){
+//     const search = document.getElementById("search")
+//     console.log(search);
+// }
 
-function accountDeleted(){
-    alert("Account Deleted Successfully!");
-}
+// function accountDeleted(){
+//     alert("Account Deleted Successfully!");
+// }
